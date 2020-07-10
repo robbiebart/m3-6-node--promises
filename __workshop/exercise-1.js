@@ -1,15 +1,30 @@
 // Exercise 1
 // ------------
-const arrayOfWords = ['cucumber', 'tomatos', 'avocado'];
-const complicatedArray = ['cucumber', 44, true];
+const arrayOfWords = ["cucumber", "tomatos", "avocado"];
+const complicatedArray = ["cucumber", 44, true];
 
 const makeAllCaps = (array) => {
-  // write some code
+  myPromise = new Promise((resolve, reject) => {
+    if (array.every((element) => typeof element === "string")) {
+      const newArray = array.map((element) => {
+        return element.toUpperCase();
+      });
+      resolve(newArray);
+    } else {
+      reject("array was ritually unclean");
+    }
+  });
+  return myPromise;
 };
 
 const sortWords = (array) => {
-  // write some code
+  return new Promise((resolve) => {
+    resolve(array.sort());
+  });
 };
+
+// write some code
+// };
 
 // Calling (testing)
 makeAllCaps(arrayOfWords)
