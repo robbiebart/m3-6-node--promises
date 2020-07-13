@@ -7,12 +7,12 @@ const request = require("request-promise");
 const getIssPosition = () => {
   return request("http://api.open-notify.org/iss-now.json")
     .then((response) => {
-      console.log("response", response);
+      // console.log("response", response);
       let parsedResponse = JSON.parse(response);
       let lng = parsedResponse.iss_position.longitude;
       let lat = parsedResponse.iss_position.latitude;
       let result = { lng, lat };
-      console.log("result here", result);
+      // console.log("result here", result);
       return result;
     })
     .catch((err) => console.log("Error: ", err));
@@ -20,8 +20,9 @@ const getIssPosition = () => {
 
 // console.log("getIssPosition", getIssPosition());
 
-getIssPosition().then((result) => console.log(result));
+// getIssPosition().then((result) => console.log(result)); !!!! commented out for 3.4
 
+module.exports = { getIssPosition };
 /*
 function call on line 21 becomes whatever the function returns
 before i added a return, on line 21 i was calling a function and it was returning 

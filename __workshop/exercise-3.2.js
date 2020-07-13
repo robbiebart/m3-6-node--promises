@@ -21,6 +21,8 @@ const getPositionFromAddress = (address) => {
   // return something...
 };
 
-getPositionFromAddress(
-  "1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8"
-).then((response) => console.log("here's the console!!!!", response));
+// getPositionFromAddress(  !!! commented out for 3.4
+//   "1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8"
+// ).then((response) => console.log("here's the console!!!!", response));
+
+module.exports = { getPositionFromAddress };
