@@ -17,7 +17,15 @@ const getDistanceFromIss = (address) => {
   });
 };
 
-getDistanceFromIss("5 Avenue Anatole France, 75007 Paris, France").then(
+const getDistanceFromIss2 = (address) => {
+  const promise1 = getIssPosition();
+  const promise2 = getPositionFromAddress(address);
+  return Promise.all([promise1, promise2]).then(([result1, result2]) => {
+    return getDistance(result1, result2);
+  });
+};
+
+getDistanceFromIss2("5 Avenue Anatole France, 75007 Paris, France").then(
   (response) => {
     console.log(response);
   }
